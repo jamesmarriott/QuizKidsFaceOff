@@ -1,0 +1,344 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+/*custom properties */
+:root {
+  --main-bg: #FFF8DA;
+  /*page bg color*/
+  --color-1: #035388;
+  /* question box bg/ player name / score */
+  --color-2: #1992D4;
+  /* answer box */
+  --color-3: #FFD93E;
+  /* player selected background*/
+  --color-4: #FCE588;
+  /* non selected player*/
+  --color-5: #464646;
+  /* default text / question number /player turn / end game */
+  --color-6: #fff;
+  /*white. text color on color1/2*/
+  --color-7: #000;
+  /*black. footer color*/
+  --color-8: #FCE588;
+  /* light yellow background */
+  --color-9: #464646;
+  /* top text color */
+}
+
+/*resets*/
+body, html {
+  background-color: var(--main-bg);
+  font-family: "poppins", sans-serif;
+  color: var(--color-5);
+  margin: 0 auto;
+  padding: 0;
+  font-size: 16px;
+  box-sizing: border-box;
+  text-overflow: hidden;
+}
+
+/* typograpy */
+
+h1{
+  font-size: 3vw;
+  font-weight: 400;
+  line-height: 5vw;
+  color: var(--color-9);
+}
+
+h2{
+  font-size: 2.4vw;
+  font-weight: 400;
+}
+
+h3{
+  font-size: 4vw;
+  font-weight: 400;
+}
+
+h4{
+  font-size: 3vw;
+  font-weight: 600;
+}
+
+h5{
+  font-size: 1.6vw;
+  font-weight: 600;
+}
+    
+.player-aviatar{
+  width: 18vw;
+}
+
+.score{
+  font-size: 16vw;
+  line-height: 16vw;
+  font-weight: 400;
+}
+
+.name{
+  font-size: 5vw;
+  font-weight: 600;
+}
+
+.q-total{
+  font-size: 2.4vw;
+  font-weight: 400;
+}
+
+/* buttons */
+.game-control-btn{
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: space-evenly;
+  align-items: center;
+  border: none;
+  border-radius: 40px;
+  text-decoration: none;
+  width: 22vw;
+  height: 5.5vw;
+  padding: 1vw 2vw 1vw 5.5vw;
+  font-size: 3vw;
+  font-weight: 600;
+  color: var(--color-6);
+  letter-spacing: .1ch;
+}
+
+.game-control-btn:hover{
+  cursor: pointer;
+  background-color: var(--color-2);
+  outline: none;
+}
+
+.restart-btn-img{
+  background: var(--color-1) url("../svgs/restart.svg") no-repeat top left;
+  background-size: 4vw 3.5vw;
+  background-position: 13% 45%;
+}
+
+.quit-btn-img{
+  width: 15vw;
+  background: var(--color-1) url("../svgs/quit.svg") no-repeat top left;
+  background-size: 2.7vw 3vw;
+  background-position: 17% 45%;
+}
+
+@media screen and (min-width: 800px) {
+
+  .game-control-btn{
+    padding: 0;
+    width: 180px;
+    height: 45px;
+    font-size: 24px;
+  }
+
+  .restart-btn{
+    padding-left: 100px;
+  }
+
+  .restart-btn-img{
+    background-size: 120px 28px;
+    background-position: -26px 8px;
+    }
+  
+  .restart-btn{
+    padding-left: 35px;
+  }
+
+  .quit-btn{
+    width: 150px;
+    padding-left: 35px;
+  }
+
+    .quit-btn-img{
+      background-size: 115px 23px;
+      background-position: -20px 10px;
+    }
+
+
+  .quest-info{
+    height: 80px;
+    margin-bottom: -2%;
+    white-space: nowrap;
+    grid-gap: 20px;
+  }
+}
+
+@media screen and (min-width: 800px)  {
+  h1{
+    font-size: 24px;
+  }
+  h2{
+    font-size: 21px;
+  }
+  h3{
+    font-size: 32px;
+  }
+  h4{
+    font-size: 30px;
+  }
+  h5{
+    font-size: 12px;
+  }
+  .player-aviatar{
+    width: 10rem;
+  }
+  .score{
+    font-size: 150px;
+    line-height: 150px;
+  }
+  .name{
+    font-size: 35px;
+  }
+  .q-total{
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 920px) {
+  h1 {
+    font-size: 30px;
+  }
+}
+
+/* main container */
+.main-container {
+  width: 100vw;
+  max-height: 100vh;
+  margin: 0 auto;
+  max-width: 60rem;
+}
+
+/* gameplay grid*/
+.gameplay-grid-container{
+  padding: 0 1em 0;
+  text-align: center;
+  justify-content: space-evenly;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "question question question"
+  "qbox qbox qbox"
+  "answers answers answers"
+  "players players players"
+  "footer footer footer";
+}
+
+/* question info */
+.quest-info { 
+  grid-area: question;
+  background-color: var(--main-bg);
+  color: var(--color-7);
+  display: flex;
+  align-items: center;
+  grid-gap: 1vw;
+  justify-content: space-evenly;
+  max-height: 7vw;
+  margin-bottom: -2%;
+}
+
+.quest-box {
+  grid-area: qbox;
+  background-color: var(--color-1);
+  color: var(--color-6);
+  border-radius: 16px;
+}
+
+/* answers card */
+.answers {
+  grid-area: answers;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-gap: 1rem;
+}
+
+.answers >* {
+  color: var(--color-6);
+  background-color: var(--color-2);
+  border-radius: 16px;
+  border: .4rem solid var(--color-2);
+}
+
+/* answer border color set to backround by default. Hover changes to highlight */
+.answer1:hover, 
+.answer2:hover,
+.answer3:hover{
+  border-radius: 16px;
+  border: .4rem solid var(--color-1);
+  cursor: pointer;
+  opacity: 1;
+  transition: all .2s ease;
+}
+
+/* player cards */
+.players{
+  grid-area: players;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+
+/* target all the children of players */
+
+.players >*{
+  color: var(--color-1);
+  background-color: var(--color-8);
+  border: .4rem solid var(--color-8);
+  border-radius: 9px;
+}
+
+/* default grid layout for player one */
+.player {
+display: grid;
+grid-template-areas:
+"avatar score"
+"name q-total";
+}
+
+.player-turn{
+  background-color: var(--color-3);
+  border: .4rem solid var(--color-1);
+}
+
+/* player2 grid layout (mirror of player 1)*/
+.player2 {
+  display: inline-grid;
+  grid-template-areas:
+  "score avatar"
+  "q-total name";
+}
+
+/* styles for both players */
+.p-avatar-img {
+  grid-area: avatar;
+  display: flex;
+  justify-content: center;
+  padding-top: 1.2vw;
+}
+ 
+/* player avatar sizing*/
+
+.score{
+  position: relative;
+  top: 12%;
+  grid-area: score;
+}
+
+.name{
+  grid-area: name;
+}
+
+.q-total{
+  grid-area: q-total;
+}
+
+/* footer */
+.footer{
+  grid-area: footer;
+  border-radius: 16px;
+  color: var(--color-7);
+  position: relative;
+}

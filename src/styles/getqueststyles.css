@@ -1,0 +1,398 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+/*custom properties */
+:root {
+  --main-bg: #FFF8DA;
+  /*page bg color*/
+  --color-1: #035388;
+  /* question box bg/ player name / score */
+  --color-2: #1992D4;
+  /* answer box */
+  --color-3: #FFD93E;
+  /* player ted background*/
+  --color-4: #FCE588;
+  /* nsn selected player*/
+  --color-5: #464646;
+  /* default text / question number /player turn / end game */
+  --color-6: #fff;
+  /*white. text color on color1/2*/
+  --color-7: #000;
+  /*black. footer color*/
+  --color-8: #FCE588;
+  /* light yellow background */
+  --color-9: #464646;
+  /* top text color */
+}
+
+/*resets*/
+body, html {
+  background-color: var(--color-8);
+  font-family: "poppins", sans-serif;
+  color: var(--color-5);
+  padding: 0;
+  font-size: 16px;
+  box-sizing: border-box;
+  text-overflow: hidden;
+}
+
+
+/* typograpy */
+
+h1{
+  /* Get Questions */
+  font-size: 3.6vw;
+  font-weight: 400;
+  color: var(--color-9);
+}
+
+h4{
+  font-size: 3vw;
+  font-weight: 600;
+}
+
+h5{
+  font-size: 1.2vw;
+  font-weight: 600;
+}
+
+/* main container */
+.main-container {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.get-questions-container{
+  padding-bottom: 20px;
+  display: grid;
+  height: 50%;
+  grid-template-columns: [far-left] 3fr [center-left] 1fr [mid] 5fr [center-right] 1fr [far-right] 3fr;
+  grid-template-rows: [main-get] auto [params] auto [params-fm] auto [submit-rw] auto;
+  justify-items: center;
+  align-items: center;
+  grid-row-gap: 2vh;
+}
+
+.back-to-main-btn{
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 2vw;
+  color: var(--color-5); 
+  grid-column-start: far-left;
+  grid-column-end: center-left;
+  grid-row-start: main-get;
+  grid-row-end: main-get;
+}
+
+.get-questions{
+  grid-column-start: mid;
+  grid-column-end: mid;
+  grid-row-start: main-get;
+  grid-row-end: main-get;
+}
+
+.btn-cont{
+  text-align: center;
+  grid-column-start: mid;
+  grid-column-end: mid;
+  grid-row-start: params;
+  grid-row-end: params;
+  padding: .2em .4em;
+}
+
+.form-contain{
+  grid-column-start: center-left;
+  grid-column-end: far-right;
+  grid-row-start: params-fm;
+  grid-row-end: params-fm;
+  color: var(--color-1);
+  display: block;
+  width: 100%;
+}
+
+.submit-contain{
+  grid-column-start: mid;
+  grid-column-end: mid;
+  grid-row-start: submit-rw;
+  grid-row-end: submit-rw;
+  text-align: center;
+}
+
+
+label{
+  font-size: 2.4vw;
+  font-weight: 500;
+  line-height: 6vw;
+}
+
+select {
+  -webkit-appearance: none;
+}
+
+.custom-select{
+  width: 50vw;
+  font-size: 3vw;
+  background: none;
+  border: none;
+  border-radius: 3rem;
+  text-decoration: none;
+  background-color: var(--color-3);
+  color: var(--color-1);
+  outline: none;
+}
+
+.custom-select:focus {
+  box-shadow: 0 0 0 .2rem var(--color-1);
+}
+
+#theme-select{
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+
+.top-txt{
+  grid-row: top-text;
+  grid-column: title-params;
+}
+
+.bnt-container{
+  grid-row-start: btns;
+  grid-row-end: btns;
+}
+
+.footy{
+  grid-row-start: footr;
+  grid-row-end: footr;
+}
+
+.btn-sm{
+  font-size: 3.5vw;
+}
+
+.big-btns{
+  font-size: 3vw;
+  letter-spacing: .15vw;
+  font-weight: 600;
+  height: 6.5vw;
+  width: 28vw;
+  border: none;
+  border-radius: 3rem;
+  text-decoration: none;
+  background-color: var(--color-1);
+  color: var(--color-6);
+  outline: none;
+  padding-left: 6vw;
+}
+
+.big-btns:hover{
+  background-color: var(--color-2);
+  cursor: pointer;
+}
+
+.params-btn{
+  background: var(--color-1) url("../svgs/params.svg") no-repeat top left;
+  background-size: 3.5vw;
+  background-position: 10% 45%;
+}
+
+.submit-btn{
+  width: 20vw;
+  background: var(--color-1) url("../svgs/apply.svg") no-repeat top left;
+  background-size: 3.5vw;
+  background-position: 15% 45%;
+}
+
+.quest-display{
+  background-color: var(--color-1);
+  color: var(--color-6);
+  border-radius: 2vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 1rem;
+  background-color: var(--color-4);
+}
+
+.q-item-wrapper{
+  display: grid;
+  background-color: var(--color-1);
+  border-radius: 2vw;
+  grid-template-areas: 
+  " . . . . . ."
+  ". quest-num . tk-cross1 answ-1 ."
+  ". . . . . ."
+  ". questl1 . tk-cross2 answ-2 ."
+  ". . . . . ."
+  ". questl2 . tk-cross3 answ-3 ."
+  " . . . . . .";
+  grid-template-columns: 2% 70% 2% 10% 14% 2%;
+  grid-template-rows: 2% 28% 2% 28% 2% 28% 2%;
+}
+.q-item-wrapper >* {
+  display:flex
+}
+.qnum{
+  grid-area: quest-num;
+  font-size: 1.4vw;
+}
+
+.qlineone {
+  grid-area: questl1;
+  font-size: 2vw;
+}
+
+.qlinetwo {
+  grid-area: questl2;
+  font-size: vw;
+}
+
+.qa1bol {
+  grid-area: tk-cross1;
+  background-size: 4vw;
+  background: var(--color-1) url("../svgs/tick.svg") no-repeat top right;
+}
+.qa1bo2 {
+  grid-area: tk-cross2;
+  background-size: 4vw;
+  background: var(--color-1) url("../svgs/cross.svg") no-repeat top right;
+}
+
+.qa1bo3 {
+  grid-area: tk-cross3;
+  background-size: 4vw;
+  background: var(--color-1) url("../svgs/cross.svg") no-repeat top right;
+}
+
+.qa1txt {
+  grid-area: answ-1;
+}
+
+.qa2txt {
+  grid-area: answ-2;
+}
+
+.qa3txt {
+  grid-area: answ-3;
+}
+
+.qa1txt,
+.qa2txt,
+.qa3txt {
+  font-size: 2.2vw;
+}
+
+
+@media screen and (min-width: 1000px)  {
+  h1{
+    /* get questions */
+    font-size: 40px;
+  }
+  h2{
+    font-size: 21px;
+  }
+  .top-txt-sm{
+    /* "welcome to"*/
+    font-size: 55px;
+  }
+
+  h4{
+    font-size: 30px;
+  }
+  h5{
+    font-size: 12px;
+   }
+  .back-to-main-btn{
+    font-size: 21px;
+  }
+  .main-container{
+    width: 1000px;
+  }
+  .get-questions-container{
+    grid-row-gap: 20px;
+  }
+  .params-btn{
+    width: 285px;
+    height: 67px;
+    font-size: 30px;
+    background: var(--color-1) url("../svgs/params.svg") no-repeat top left;
+    background-size: 60px 35px;
+    background-position: 9% 45%;
+    padding-left: 4rem;
+  }
+  .btn-sm{
+    font-size: 40px;
+  }
+  .submit-btn{
+    width: 190px;
+    height: 67px;
+    color: var(--color-6);
+    font-size: 30px;
+    border-radius: 3rem;
+    font-weight: 600;
+    background-color: var(--color-1);
+    background: var(--color-1) url("../svgs/apply.svg") no-repeat top left;
+    background-size: 60px 35px;
+    background-position: 10% 45%;
+    border: none;
+    padding-left: 3.1rem;
+    outline: none;
+  }
+
+  label{
+    font-size: 32px;
+    font-weight: 500;
+    text-align: left;
+    line-height: 65px;
+  }
+  
+  .custom-select{
+    width: 100%;
+    font-size: 32px;
+    background: none;
+    border: none;
+    border-radius: 3rem;
+    text-decoration: none;
+    background-color: var(--color-3);
+    color: var(--color-1);
+    outline: none;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .qnum {
+    grid-area: quest-num;
+    font-size: 18px;
+  }
+  
+  .qlineone {
+    grid-area: questl1;
+    font-size: 20px;
+  }
+  
+  .qlinetwo {
+    grid-area: questl2;
+    font-size: 22px;
+  }
+  
+  .qa1bol ,
+  .qa1bo2 ,
+  .qa1bo3 {
+    background-size: 40px;
+  }
+  .qa1txt,
+  .qa2txt,
+  .qa3txt {
+    font-size: 20px;
+  }
+  
+}
+
+/* footer */
+/* .footer{
+  grid-area: footer;
+  border-radius: 16px;
+  color: var(--color-7);
+  position: relative;
+} */

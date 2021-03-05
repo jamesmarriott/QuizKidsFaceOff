@@ -1,0 +1,169 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+/*custom properties */
+:root {
+  --main-bg: #FFF8DA;
+  /*page bg color*/
+  --color-1: #035388;
+  /* question box bg/ player name / score */
+  --color-2: #1992D4;
+  /* answer box */
+  --color-3: #FFD93E;
+  /* player selected background*/
+  --color-4: #FCE588;
+  /* non selected player*/
+  --color-5: #464646;
+  /* default text / question number /player turn / end game */
+  --color-6: #fff;
+  /*white. text color on color1/2*/
+  --color-7: #000;
+  /*black. footer color*/
+  --color-8: #FCE588;
+  /* light yellow background */
+  --color-9: #464646;
+  /* top text color */
+}
+
+/*resets*/
+body, html {
+  background-color: var(--color-4);
+  font-family: "poppins", sans-serif;
+  color: var(--color-5);
+  margin: 0 auto;
+  padding: 0;
+  font-size: 16px;
+  box-sizing: border-box;
+  text-overflow: hidden;
+}
+
+/* typograpy */
+
+h1{
+  /* quizkids - faceoff! */
+  font-size: 8vw;
+  font-weight: 800;
+  color: var(--color-1);
+  line-height: 99%;
+text-align: center;
+}
+
+/* h2{
+  font-size: 1.5vw;
+  font-weight: 400;
+} */
+
+.top-txt-sm{
+  /* "welcome to" */
+  font-size: 4vw;
+}
+
+h4{
+  font-size: 3vw;
+  font-weight: 600;
+}
+
+h5{
+  font-size: 1.2vw;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 1200px)  {
+  h1{
+    /* 2quizkids - faceoff" */
+    font-size: 100px;
+  }
+  h2{
+    font-size: 21px;
+  }
+  .top-txt-sm{
+    /* "welcome to"*/
+    font-size: 55px;
+  }
+
+  h4{
+    font-size: 30px;
+  }
+  h5{
+    font-size: 12px;
+   }
+  }
+
+/* main container */
+.main-container {
+  margin: 0 auto;
+  display: grid;
+  grid-row-gap: 1vh;
+  grid-template-columns: auto;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows:
+  [toptxt] 30% [btns] 50% [footr] 20%;
+  height: 100%;
+}
+
+.top-txt{
+  grid-row-start: toptxt;
+  grid-row-end: toptxt;
+  text-align: center;
+}
+
+.bnt-container{
+  grid-row-start: btns;
+  grid-row-end: btns;
+}
+
+.footy{
+  grid-row-start: footr;
+  grid-row-end: footr;
+}
+
+.main-btn{
+  display: block;
+  font-size: 4vw;
+  letter-spacing: .15vw;
+  font-weight: 600;
+  height: 9vw;
+  width: 34vw;
+  margin: .25em;
+  border: none;
+  border-radius: 3rem;
+  text-decoration: none;
+  background-color: var(--color-2);
+  color: var(--color-6);
+  outline: none;
+}
+
+.main-btn:hover{
+  background-color: var(--color-1);
+  cursor: pointer;
+}
+
+.btn-sm{
+  font-size: 3.5vw;
+}
+
+@media screen and (min-width: 1200px)  {
+
+  .main-container{
+    width: 1200px;
+  }
+  .main-btn
+{
+    width: 450px;
+    height: 120px;
+    font-size: 55px;
+    border-radius: 3rem;
+}
+  .btn-sm{
+    font-size: 40px;
+  }
+}
+
+/* footer */
+.footer{
+  grid-area: footer;
+  border-radius: 16px;
+  color: var(--color-7);
+  position: relative;
+}
