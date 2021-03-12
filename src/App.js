@@ -21,7 +21,6 @@ function App() {
 
   return (
     <div className="main-container">
-    <Header/>
     <MainMenu />
     <Footer/>
     </div>

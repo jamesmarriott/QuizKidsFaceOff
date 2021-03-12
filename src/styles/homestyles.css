@@ -68,6 +68,10 @@ h5{
   font-weight: 600;
 }
 
+footer{
+  font-size: .6vw;
+}
+
 @media screen and (min-width: 1200px)  {
   h1{
     /* 2quizkids - faceoff" */
@@ -80,13 +84,15 @@ h5{
     /* "welcome to"*/
     font-size: 55px;
   }
-
   h4{
     font-size: 30px;
   }
   h5{
     font-size: 12px;
    }
+  footer{
+    font-size: 12px;
+  }
   }
 
 /* main container */
@@ -158,12 +164,4 @@ h5{
   .btn-sm{
     font-size: 40px;
   }
-}
-
-/* footer */
-.footer{
-  grid-area: footer;
-  border-radius: 16px;
-  color: var(--color-7);
-  position: relative;
 }

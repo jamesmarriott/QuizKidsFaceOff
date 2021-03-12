@@ -3,7 +3,7 @@ import React from "react"
 function Footer() {
     return (
         <footer>
-            <p className="footer">©Rainbow Kids</p>
+            <h5>© 2021 Rainbow Kids English</h5>
         </footer>
     )
 }
