@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="main-container">
     <MainMenu />
-    <Footer/>
+    {/* <Footer/> */}
     </div>
   )
 }
